@@ -1,0 +1,11 @@
+FirstName,LastName,Email,Department,IsActive
+Anakin,Skywalker,anakin@order.com,Knights,true
+Padme,Amidala,padme@senate.com,Senate,true
+Obi-Wan,Kenobi,obi@order.com,Knights,true
+Mace,Windu,mace@order.com,Council,true
+Yoda,Master,yoda@order.com,Council,true
+Sheev,Palpatine,sheev@senate.com,Senate,false
+Dooku,Count,dooku@separatist.com,Separatists,false
+Grievous,General,grievous@separatist.com,Separatists,false
+Maul,Lord,maul@separatist.com,Separatists,false
+Ahsoka,Tano,ahsoka@order.com,Knights,true
