@@ -33,7 +33,7 @@
     Requis  : PowerShell 5.1+ ou PowerShell 7+
 
 #>
-$liste= Import-csv -CsvPath 'F:\github\train\cours\pwsh'
+$liste= Import-csv -CsvPath 'F:\github\train\cours\pwsh\Tableau'
 Write-Host $liste
 
 
