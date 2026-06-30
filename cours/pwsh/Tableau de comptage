@@ -33,9 +33,8 @@
     Requis  : PowerShell 5.1+ ou PowerShell 7+
 
 #>
-$liste= Import-csv -CsvPath 'F:\github\train\cours\pwsh\Tableau'
-Write-Host $liste
-
+$liste | Group-Object Department | Select-Object Name, Count, @{N="FirstNames"; E={$_.Group.FirstName -join ", "}}, @{N="IsActive"; E={$_.Group.IsActive -join ", "}}
+Export-Csv -path F:\github\train\cours\pwsh\liste.resultats
 
 
 
