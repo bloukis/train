@@ -1,2 +1,76 @@
 le header (l'entête) la descrip , les parametres , apres les fonction 
 ensutie body ( execution du script ) retour ( du log un retour ecris ou autre ) , exe du code 
+Lorsque on lance un script avec des parametres de base si on souhaitre les modif avant faire  - ( nom de la variable) puis " ecrire la new var "
+ une "," est que tu commence une autre commande 
+ validset = se sont les mot autorisé
+## Cheat Sheet PowerShell
+
+### Navigation
+| Commande | Rôle |
+|---|---|
+| `Get-Location` | Où suis-je ? |
+| `Set-Location "chemin"` | Changer de dossier (alias : `cd`) |
+| `Get-ChildItem` | Lister le contenu (alias : `ls`) |
+
+---
+
+### Exécuter un script
+| Commande | Rôle |
+|---|---|
+| `.\script.ps1` | Lancer depuis le dossier courant |
+| `& "F:\chemin\script.ps1"` | Lancer avec chemin complet |
+| `& "F:\script.ps1" -Param "valeur"` | Lancer avec un paramètre |
+
+---
+
+### Données & listes
+| Commande | Rôle |
+|---|---|
+| `$liste \| Select-Object A, B` | Garder certaines colonnes |
+| `$liste \| Where-Object { $_.X -eq "val" }` | Filtrer les lignes |
+| `$liste \| Group-Object Colonne` | Regrouper par valeur |
+| `$liste \| Measure-Object` | Compter, sommer, moyenner |
+| `$liste.Count` | Nombre d'éléments |
+
+---
+
+### Fichiers CSV
+| Commande | Rôle |
+|---|---|
+| `Import-Csv -Path "fichier.csv"` | Charger un CSV |
+| `Export-Csv -Path "fichier.csv" -NoTypeInformation` | Exporter vers CSV |
+| `-Delimiter ";"` | Séparateur pour Excel FR |
+| `-Encoding UTF8` | Évite les problèmes d'accents |
+| `-Append` | Ajouter sans écraser |
+
+---
+
+### Affichage
+| Commande | Rôle |
+|---|---|
+| `Write-Host "texte"` | Afficher dans la console |
+| `Write-Host "texte" -ForegroundColor Green` | Afficher en couleur |
+| `Format-Table -AutoSize` | Afficher en tableau propre |
+| `Read-Host "Question ?"` | Poser une question à l'utilisateur |
+
+---
+
+### Conditions & logique
+| Commande | Rôle |
+|---|---|
+| `if / elseif / else` | Condition |
+| `switch ($var) { val { } }` | Aiguillage multiple |
+| `-eq / -ne / -gt / -lt` | Comparaisons |
+| `-and / -or / -not` | Combiner conditions |
+
+---
+
+### Divers utiles
+| Commande | Rôle |
+|---|---|
+| `Get-Help NomCmdlet` | Aide sur une commande |
+| `Get-Date` | Date et heure actuelles |
+| `$PSVersionTable` | Version de PowerShell |
+| `Set-ExecutionPolicy Unrestricted` | Autoriser les scripts |
+| `Test-Path "chemin"` | Vérifier si un fichier/dossier existe |
+| `New-Item -ItemType Directory` | Créer un dossier |

@@ -1,8 +1,11 @@
 param(
     [Parameter()]
-    [string]$CsvPath = "F:\github\train\cours\pwsh\Tableau.csv"
+    [string]$CsvPath = "F:\github\train\cours\pwsh\Tableau.csv",
+    [Parameter()]
+    [string]$Entreprise = "axa" 
 )
-function Write-Log {
+
+function GMK {
     param(
         [Parameter(Mandatory)]
         [string]$Message,
@@ -18,10 +21,12 @@ function Write-Log {
     }
     Write-Host "[$ts] [$Level] $Message" -ForegroundColor $color
 }
-$question1 = Read-Host " le quoi ? "
 
-Write-Log "Lecture du fichier : $CsvPath"
+
+GMK "Lecture du fichier  : $CsvPath" -Level WARNING
 
 $users = Import-Csv -Path $CsvPath
  
-Write-Log "$($users.Count) utilisateur(s) chargé(s)" -Level SUCCESS
+GMK "$($users.Count) utilisateur(s) chargé(s)" -Level SUCCESS
+
+GMK $Entreprise 
