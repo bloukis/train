@@ -1,0 +1,5 @@
+Select-objet crée des colonne 
+$varleur + extension  = extraire de la liste  l'extention correspond exemple $liste.firstname 
+les pipeline | permertte de chain les commande 
+Cette commande @{N="FirstNames"; E={$_.Group.FirstName -join ", "}}, @{N="IsActive"; E={$_.Group.IsActive -join ", "}}
+Explique que pour permet de sortir de la liste en plus des colonne les élement que je souhaite aligné et compté  les "{}" sont essentile ansi que le @ aux début de la 

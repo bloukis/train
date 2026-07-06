@@ -29,12 +29,19 @@
 .NOTES
     Auteur  : François Vachon
     Date    : 2026-06-28
-    Version : 1.0.0
+    Version : 1.0.0s
     Requis  : PowerShell 5.1+ ou PowerShell 7+
 
 #>
-$liste | Group-Object Department | Select-Object Name, Count, @{N="FirstNames"; E={$_.Group.FirstName -join ", "}}, @{N="IsActive"; E={$_.Group.IsActive -join ", "}}
-Export-Csv -path F:\github\train\cours\pwsh\liste.resultats
+param(
+    [Parameter()]
+    [string]$CsvPath = "f:\github\train\cours\pwsh\Tableau.csv"
+)
+#$liste | Group-Object Department | Select-Object Name, Count, @{N="FirstNames"; E={$_.Group.FirstName -join ", "}}, @{N="IsActive"; E={$_.Group.IsActive -join ", "}}
+#Export-Csv -path $CsvPaths
+
+$user = Import-csv -path $CsvPath
+Write-host "$user"
 
 
 
