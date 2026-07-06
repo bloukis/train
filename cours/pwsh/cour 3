@@ -51,7 +51,7 @@ Lorsque on lance un script avec des parametres de base si on souhaitre les modif
 | `Write-Host "texte"` | Afficher dans la console |
 | `Write-Host "texte" -ForegroundColor Green` | Afficher en couleur |
 | `Format-Table -AutoSize` | Afficher en tableau propre |
-| `Read-Host "Question ?"` | Poser une question à l'utilisateur |
+| `Read-Host "Question ?"` | Poser une question à l'utilisateur | on peut écrie ce que l'on veut comme question 
 
 ---
 
@@ -74,3 +74,17 @@ Lorsque on lance un script avec des parametres de base si on souhaitre les modif
 | `Set-ExecutionPolicy Unrestricted` | Autoriser les scripts |
 | `Test-Path "chemin"` | Vérifier si un fichier/dossier existe |
 | `New-Item -ItemType Directory` | Créer un dossier |
+# Expliquer un parametre 
+param(
+    [type]$NomDuParamètre (Mandatory) ou pas  = "valeur par défaut"
+)
+Mandatory ne s'applique que jusqu a la fin de la commande si on fait une Virgule , 
+cela ne s'applique plus 
+# Pour faire des couleur sur les ligne 
+# Dans ce cas c'est la variable '$color$'
+
+    $color = switch ($Level) {
+        'SUCCESS' { 'Green' }
+        'WARNING' { 'Yellow' }
+        'ERROR'   { 'Red' }
+        default   { 'Cyan' }
